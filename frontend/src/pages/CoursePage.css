@@ -1,0 +1,78 @@
+.course-page {
+    min-height: 100vh;
+    background: #f7f9fb;
+  }
+  
+  .course-content-wrapper {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 24px;
+    /* Không căn giữa, không max-width */
+    box-sizing: border-box;
+  }
+  
+  .course-hero {
+    background: #2862beab; /* Xanh biển nổi bật */
+    border-radius: 5px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+    padding: 48px 48px 40px 48px;
+    margin-bottom: 32px;
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    color: #fff;
+  }
+  
+  .course-hero-title {
+    margin: 0;
+    color: #dbeafe;
+  }
+  
+  .course-hero-instructor {
+    margin: 10px 0 0 0;
+    font-weight: 500;
+    color: #dbeafe;
+  }
+  
+  .course-hero-btn {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    background: #fff !important;
+    color: #2563eb !important;
+    border: none;
+    font-weight: bold;
+  }
+  
+  .course-hero-enrolled {
+    margin: 0;
+    color: #dbeafe;
+  }
+  
+  .course-highlights {
+    margin-bottom: 32px;
+  }
+  
+  .course-highlights .ant-card {
+    border-radius: 12px !important;
+    border: none !important;
+  }
+  
+  .course-tabs {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 16px;
+  }
+  
+  @media (max-width: 900px) {
+    .course-hero {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 32px 16px;
+    }
+    .course-content-wrapper {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
+  

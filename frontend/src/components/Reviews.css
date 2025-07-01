@@ -1,0 +1,19 @@
+.reviews-section {
+    width: 100%;
+    background: #fff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    padding: 0 32px 48px 32px; /* Thêm padding trái/phải */
+    box-sizing: border-box;
+  }
+  
+  .reviews-list {
+    width: 100%;
+    background: #fff;
+    padding: 0 8px; /* Thêm padding nhỏ cho danh sách */
+  }
+  
+  .reviews-list .ant-list-item {
+    padding: 24px 16px; /* Thêm padding trái/phải cho từng item */
+    border-bottom: 1px solid #f0f0f0;
+  }
+  

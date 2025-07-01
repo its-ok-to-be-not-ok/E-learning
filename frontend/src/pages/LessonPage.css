@@ -1,0 +1,146 @@
+.lesson-layout {
+  min-height: 100vh;
+  background: #f7f8fa;
+}
+
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 0 32px;
+  height: 64px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lesson-header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.back-btn {
+  font-size: 18px;
+  color: #222;
+  padding: 0 8px 0 0;
+}
+
+.course-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+.lesson-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.lesson-sider {
+  background: #fff !important;
+  border-right: 1px solid #f0f0f0;
+  padding: 24px 0 0 0;
+  min-height: calc(100vh - 64px);
+}
+
+.module-navbar {
+  padding: 0 16px;
+}
+
+.module-item {
+  margin-bottom: 12px;
+}
+
+.module-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f5f6fa;
+  font-weight: 500;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.module-title-row:hover {
+  background: #e6f7ff;
+}
+
+.arrow {
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.module-lessons {
+  padding-left: 18px;
+  margin-top: 6px;
+}
+
+.lesson-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lesson-info {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+.lesson-type {
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.lesson-name {
+  color: #222;
+  margin-left: 10px;
+}
+
+.lesson-duration {
+  font-size: 13px;
+  color: #888;
+  margin-top: 2px;
+  min-width: 70px;
+  text-align: right;
+}
+
+.lesson-content {
+  padding: 32px 40px;
+  background: #fff;
+  min-height: calc(100vh - 64px);
+}
+
+.fixed-options {
+  margin-bottom: 18px;
+  padding: 0 4px;
+}
+
+.fixed-option {
+  margin-bottom: 6px;
+}
+
+.fixed-btn {
+  width: 100%;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  color: #222;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.fixed-btn:hover {
+  background: #e6f7ff;
+  color: #1890ff;
+} 

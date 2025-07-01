@@ -1,0 +1,24 @@
+.lesson-document {
+  width: 100%;
+}
+.doc-title {
+  font-size: 1.5em !important;
+  font-weight: 700;
+  margin-bottom: 8px !important;
+  text-align: left;
+}
+.doc-para {
+  font-size: 1em;
+  margin-bottom: 12px;
+  text-align: left;
+}
+.doc-img-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 18px 0;
+}
+.doc-img {
+  max-width: 90%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+} 

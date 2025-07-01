@@ -1,0 +1,15 @@
+.lesson-assignment {
+  background: #fff;
+  border-radius: 8px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  max-width: 700px;
+  margin: 0 auto;
+}
+.assignment-comments {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.assignment-upload {
+  margin-top: 24px;
+} 

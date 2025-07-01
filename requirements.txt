@@ -1,0 +1,7 @@
+Django==4.2.3
+Djangorestframework==3.14.0
+psycopg2-binary==2.9.10
+django-storages==1.13.1
+azure-storage-blob==12.14.0
+django-cors-headers==3.14.0 
+python-dotenv==1.1.1

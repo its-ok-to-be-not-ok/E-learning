@@ -1,0 +1,23 @@
+.syllabus-item {
+    border: none !important;
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  }
+  
+  .syllabus-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+  }
+  
+  .syllabus-description {
+    padding: 0 16px 12px 16px;
+    border-top: 1px solid #f0f0f0;
+  }
+  
+  /* Nếu muốn highlight khi hover */
+  .syllabus-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12) !important;
+  }
+  

@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.homepage {
+  padding: 20px;
+  text-align: center;
+}
+
+.homepage-header {
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.featured-courses {
+  margin: 20px 0;
+}
+
+.courses-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.course-item {
+  background-color: #e9ecef;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.about {
+  margin: 20px 0;
+}
+
+.call-to-action button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.call-to-action button:hover {
+  background-color: #0056b3;
+} 
+
+.courses-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
+
+.review-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 48px;
+}
