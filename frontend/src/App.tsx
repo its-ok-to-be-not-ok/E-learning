@@ -8,6 +8,7 @@ import TeacherDashboard from './pages/TeacherDashboard';
 import CoursePage from './pages/CoursePage';
 import LessonPage from './pages/LessonPage';
 import ExplorePage from './pages/ExplorePage';
+import VerifyEmailPage from './pages/VerifyEmailPage';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <Routes>
             <Route path="/login" element={<AuthPage />} />
             <Route path="/register" element={<AuthPage />} />
-            {/* Nếu có trang forgot-password, thêm vào đây */}
             {/* <Route path="/forgot-password" element={<AuthPage isForgot={true} />} /> */}
+            <Route path="/verify-email/:token" element={<VerifyEmailPage />} />
+    
             <Route path="/student-dashboard" element={<StudentDashboard />} />
             <Route path="/teacher-dashboard" element={<TeacherDashboard />} />
             <Route path="/course" element={<CoursePage />} />

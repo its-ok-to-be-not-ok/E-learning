@@ -28,34 +28,39 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews, isEnrolled, onSubmitReview }
 
   const handleSubmit = () => {
     if (!rating || !comment.trim()) {
-      message.warning('Vui lòng nhập đầy đủ đánh giá và nhận xét.');
+      message.warning('Please provide both a rating and your feedback.');
       return;
     }
     setSubmitting(true);
     setTimeout(() => {
-      onSubmitReview && onSubmitReview({ studentName: 'Bạn', rating, comment });
+      onSubmitReview && onSubmitReview({ studentName: 'You', rating, comment });
       setRating(0);
       setComment('');
       setSubmitting(false);
-      message.success('Đã gửi đánh giá!');
+      message.success('Review submitted!');
     }, 1000);
   };
 
   return (
-    <div className="reviews-section">
+    <section className="reviews-section">
       {isEnrolled && (
         <Card className="review-input-card" bordered={false}>
-          <Title level={5} style={{ marginBottom: 8 }}>Viết đánh giá của bạn</Title>
-          <Rate value={rating} onChange={setRating} style={{ marginBottom: 8 }} />
+          <Title level={5} className="section-title">Write Your Review</Title>
+          <Rate value={rating} onChange={setRating} style={{ marginBottom: 12 }} />
           <TextArea
-            rows={3}
+            rows={4}
             value={comment}
             onChange={e => setComment(e.target.value)}
-            placeholder="Chia sẻ cảm nhận về khoá học..."
-            style={{ marginBottom: 8 }}
+            placeholder="Share your thoughts about this course..."
+            className="review-textarea"
           />
-          <Button type="primary" loading={submitting} onClick={handleSubmit}>
-            Gửi đánh giá
+          <Button
+            type="primary"
+            loading={submitting}
+            onClick={handleSubmit}
+            className="submit-button"
+          >
+            Submit Review
           </Button>
         </Card>
       )}
@@ -63,19 +68,30 @@ const Reviews: React.FC<ReviewsProps> = ({ reviews, isEnrolled, onSubmitReview }
         className="reviews-list"
         itemLayout="horizontal"
         dataSource={reviews}
-        header={<Title level={5} style={{ margin: 0 }}>Đánh giá từ học viên</Title>}
+        header={<Title level={5} className="section-title">Student Reviews</Title>}
         renderItem={item => (
           <List.Item>
             <List.Item.Meta
-              avatar={<Avatar src={item.avatar} icon={!item.avatar && <UserOutlined />} />}
-              title={<span><b>{item.studentName}</b> <Rate disabled value={item.rating} style={{ fontSize: 14, marginLeft: 8 }} /></span>}
-              description={<span>{item.comment}<br /><Text type="secondary" style={{ fontSize: 12 }}>{item.date}</Text></span>}
+              avatar={<Avatar src={item.avatar} icon={!item.avatar && <UserOutlined />} size={44} />}
+              title={
+                <span className="reviewer-name">
+                  <b>{item.studentName}</b>
+                  <Rate disabled value={item.rating} style={{ fontSize: 15, marginLeft: 10 }} />
+                </span>
+              }
+              description={
+                <span>
+                  <span className="review-comment">{item.comment}</span>
+                  <br />
+                  <Text type="secondary" className="review-date">{item.date}</Text>
+                </span>
+              }
             />
           </List.Item>
         )}
       />
-    </div>
+    </section>
   );
 };
 
-export default Reviews; 
+export default Reviews;

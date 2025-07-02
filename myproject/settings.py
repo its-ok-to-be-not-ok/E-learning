@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'storages',
     'backend',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -41,7 +42,27 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),   # Token truy cập sống 60 phút
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),      # Token làm mới sống 7 ngày
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'ALGORITHM': 'HS256',
+    'AUTH_HEADER_TYPES': ('Bearer',),                 # Sử dụng "Bearer <token>" trong header
+}
+
+
 ROOT_URLCONF = 'myproject.urls'
+
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:3000')
 
 TEMPLATES = [
     {
@@ -92,6 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+CORS_ALLOW_CREDENTIALS = True
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
@@ -109,3 +136,16 @@ AZURE_ACCOUNT_KEY = os.getenv('AZURE_ACCOUNT_KEY', '')
 AZURE_CONTAINER = os.getenv('AZURE_CONTAINER', '')
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net/{AZURE_CONTAINER}'
 MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/'
+
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', 587))
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
+COMPANY_NAME = os.getenv('COMPANY_NAME')
+COMPANY_EMAIL = os.getenv('COMPANY_EMAIL')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_USE_SSL = os.getenv('EMAIL_USE_SSL', 'False') == 'True'
+

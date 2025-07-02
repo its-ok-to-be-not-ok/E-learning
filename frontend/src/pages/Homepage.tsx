@@ -3,10 +3,10 @@ import './Homepage.css';
 import { Button, Card, Layout as AntLayout, Typography, Carousel, Row, Col } from 'antd';
 import Layout from '../components/Layout';
 import CourseCard from '../components/CourseCard';
+import HeroCarousel from '../components/HeroCarousel';
 const { Header, Content } = AntLayout;
 const { Title, Paragraph } = Typography;
 
- 
 
 const featuredCourses = [
   {
@@ -105,23 +105,7 @@ const Homepage: React.FC = () => {
     <Layout>
       <Content>
         <section className="hero-section">
-          <Carousel autoplay>
-            <div>
-              <h3 style={{ height: '300px', color: '#fff', lineHeight: '300px', textAlign: 'center', background: '#364d79' }}>
-                Slide 1
-              </h3>
-            </div>
-            <div>
-              <h3 style={{ height: '300px', color: '#fff', lineHeight: '300px', textAlign: 'center', background: '#364d79' }}>
-                Slide 2
-              </h3>
-            </div>
-            <div>
-              <h3 style={{ height: '300px', color: '#fff', lineHeight: '300px', textAlign: 'center', background: '#364d79' }}>
-                Slide 3
-              </h3>
-            </div>
-          </Carousel>
+          <HeroCarousel />
         </section>
         <section className="featured-courses">
           <Title level={2} style={{ textAlign: 'center', marginBottom: 32 }}>Featured Courses</Title>

@@ -6,20 +6,26 @@ class User(models.Model):
     username = models.CharField(max_length=255, unique=True)
     password_hash = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    full_name = models.CharField(max_length=255)
-    phone = models.CharField(max_length=20)
-    date_of_birth = models.DateField()
-    gender = models.CharField(max_length=50)
+    full_name = models.CharField(max_length=255, blank=True)
+    phone = models.CharField(max_length=20, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True)
+    gender = models.CharField(max_length=50, blank=True)
     avatar_url = models.URLField(blank=True)
-    address = models.CharField(max_length=255)
-    role = models.CharField(max_length=50)
+    address = models.CharField(max_length=255, blank=True)
+    role = models.CharField(max_length=50, blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(null=True, blank=True)
     updated_at = models.DateTimeField(auto_now=True)
+    reset_password_token = models.CharField(max_length=255, null=True, blank=True)
+    reset_password_token_expires_at = models.DateTimeField(null=True, blank=True)
+    is_verified = models.BooleanField(default=False)
+    verification_token = models.CharField(max_length=255, null=True, blank=True)
+    verification_token_expires_at = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.username
+
 
 class Teacher(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -34,8 +40,8 @@ class Course(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(blank=True)
     result = models.TextField(blank=True)
-    category = models.CharField(max_length=255)
-    level = models.CharField(max_length=255)
+    category = models.CharField(max_length=255, blank = True)
+    level = models.CharField(max_length=255, blank = True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
